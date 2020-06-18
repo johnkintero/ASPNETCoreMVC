@@ -1,0 +1,17 @@
+/Users/johnki/CURSOS/ASPNetCore3MVC/WebAlpha/obj/Debug/netcoreapp3.1/WebAlpha.csprojAssemblyReference.cache
+/Users/johnki/CURSOS/ASPNetCore3MVC/WebAlpha/obj/Debug/netcoreapp3.1/WebAlpha.AssemblyInfoInputs.cache
+/Users/johnki/CURSOS/ASPNetCore3MVC/WebAlpha/obj/Debug/netcoreapp3.1/WebAlpha.AssemblyInfo.cs
+/Users/johnki/CURSOS/ASPNetCore3MVC/WebAlpha/obj/Debug/netcoreapp3.1/WebAlpha.csproj.CoreCompileInputs.cache
+/Users/johnki/CURSOS/ASPNetCore3MVC/WebAlpha/obj/Debug/netcoreapp3.1/WebAlpha.MvcApplicationPartsAssemblyInfo.cache
+/Users/johnki/CURSOS/ASPNetCore3MVC/WebAlpha/bin/Debug/netcoreapp3.1/WebAlpha.deps.json
+/Users/johnki/CURSOS/ASPNetCore3MVC/WebAlpha/bin/Debug/netcoreapp3.1/WebAlpha.runtimeconfig.json
+/Users/johnki/CURSOS/ASPNetCore3MVC/WebAlpha/bin/Debug/netcoreapp3.1/WebAlpha.runtimeconfig.dev.json
+/Users/johnki/CURSOS/ASPNetCore3MVC/WebAlpha/bin/Debug/netcoreapp3.1/WebAlpha.dll
+/Users/johnki/CURSOS/ASPNetCore3MVC/WebAlpha/bin/Debug/netcoreapp3.1/WebAlpha.pdb
+/Users/johnki/CURSOS/ASPNetCore3MVC/WebAlpha/obj/Debug/netcoreapp3.1/WebAlpha.RazorTargetAssemblyInfo.cache
+/Users/johnki/CURSOS/ASPNetCore3MVC/WebAlpha/obj/Debug/netcoreapp3.1/staticwebassets/WebAlpha.StaticWebAssets.Manifest.cache
+/Users/johnki/CURSOS/ASPNetCore3MVC/WebAlpha/obj/Debug/netcoreapp3.1/staticwebassets/WebAlpha.StaticWebAssets.xml
+/Users/johnki/CURSOS/ASPNetCore3MVC/WebAlpha/obj/Debug/netcoreapp3.1/WebAlpha.dll
+/Users/johnki/CURSOS/ASPNetCore3MVC/WebAlpha/obj/Debug/netcoreapp3.1/WebAlpha.pdb
+/Users/johnki/CURSOS/ASPNetCore3MVC/WebAlpha/obj/Debug/netcoreapp3.1/WebAlpha.genruntimeconfig.cache
+/Users/johnki/CURSOS/ASPNetCore3MVC/WebAlpha/bin/Debug/netcoreapp3.1/Properties/launchSettings.json
