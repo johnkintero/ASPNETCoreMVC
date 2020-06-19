@@ -30,3 +30,5 @@
 /Users/johnki/CURSOS/ASPNetCore3MVC/AlphaWebApp/obj/Debug/netcoreapp3.1/AlphaWebApp.csproj.CopyComplete
 /Users/johnki/CURSOS/ASPNetCore3MVC/AlphaWebApp/obj/Debug/netcoreapp3.1/Razor/Views/Book/GetAllBooks.cshtml.g.cs
 /Users/johnki/CURSOS/ASPNetCore3MVC/AlphaWebApp/obj/Debug/netcoreapp3.1/Razor/Views/Home/AboutUs.cshtml.g.cs
+/Users/johnki/CURSOS/ASPNetCore3MVC/AlphaWebApp/obj/Debug/netcoreapp3.1/Razor/Views/Shared/ContactUs.cshtml.g.cs
+/Users/johnki/CURSOS/ASPNetCore3MVC/AlphaWebApp/obj/Debug/netcoreapp3.1/Razor/TempView/TempView.cshtml.g.cs

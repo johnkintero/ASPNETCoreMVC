@@ -7,6 +7,8 @@ using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
+using System.IO;
+using Microsoft.Extensions.FileProviders;
 
 namespace AlphaWebApp
 {
@@ -26,6 +28,15 @@ namespace AlphaWebApp
             {
                 app.UseDeveloperExceptionPage();
             }
+            //Sirve para activar el uso de archivos estaticos en la carpeta wwwroot
+            app.UseStaticFiles();
+
+            //Sirve para definir una nueva carpeta de archivos estaticos
+            app.UseStaticFiles(new StaticFileOptions()
+            {
+                FileProvider = new PhysicalFileProvider(Path.Combine(Directory.GetCurrentDirectory(), "MyStaticFiles")),
+                RequestPath="/MyStaticFiles"
+            });
 
             app.UseRouting();
 

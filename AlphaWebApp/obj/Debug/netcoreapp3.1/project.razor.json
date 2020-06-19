@@ -20531,6 +20531,16 @@
       "FileKind": "mvc"
     },
     {
+      "FilePath": "/Users/johnki/CURSOS/ASPNetCore3MVC/AlphaWebApp/Views/Shared/ContactUs.cshtml",
+      "TargetPath": "Views\\Shared\\ContactUs.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "/Users/johnki/CURSOS/ASPNetCore3MVC/AlphaWebApp/TempView/TempView.cshtml",
+      "TargetPath": "TempView\\TempView.cshtml",
+      "FileKind": "mvc"
+    },
+    {
       "FilePath": "/Users/johnki/CURSOS/ASPNetCore3MVC/AlphaWebApp/Views/Book/GetAllBooks.cshtml",
       "TargetPath": "Views\\Book\\GetAllBooks.cshtml",
       "FileKind": "mvc"
