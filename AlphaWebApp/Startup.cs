@@ -19,6 +19,12 @@ namespace AlphaWebApp
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddControllersWithViews();
+
+            //Estas linea es para que las paginas razor se actualicen sin necesidad de compilar la apliacion
+            //la validacion es solo funcionara si esta en debug 
+            #if DEBUG
+            services.AddRazorPages().AddRazorRuntimeCompilation();
+            #endif
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
