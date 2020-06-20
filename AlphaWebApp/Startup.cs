@@ -32,11 +32,11 @@ namespace AlphaWebApp
             app.UseStaticFiles();
 
             //Sirve para definir una nueva carpeta de archivos estaticos
-            app.UseStaticFiles(new StaticFileOptions()
-            {
-                FileProvider = new PhysicalFileProvider(Path.Combine(Directory.GetCurrentDirectory(), "MyStaticFiles")),
-                RequestPath="/MyStaticFiles"
-            });
+            // app.UseStaticFiles(new StaticFileOptions()
+            // {
+            //     FileProvider = new PhysicalFileProvider(Path.Combine(Directory.GetCurrentDirectory(), "MyStaticFiles")),
+            //     RequestPath="/MyStaticFiles"
+            // });
 
             app.UseRouting();
 
