@@ -1,8 +1,5 @@
 @using AlphaWebApp.Models;
 @model IEnumerable<BookModel>
-@{
-    Layout = "_Layout";
-}
 
 <div class="container">
     <h3 class="display-4">Libros</h3>
@@ -17,7 +14,7 @@
                         <p class="card-text">@book.Description</p>
                         <div class="d-flex justify-content-between aling-items-center">
                             <div class="btn-group">
-                                <a href="#" class="btn btn-sm btn-outline-secondary">Ver detalles</a>
+                                <a href="/book/GetBook/@book.Id" class="btn btn-sm btn-outline-secondary">Ver detalles</a>
                             </div>
                             <small class="text-muted">Autor : @book.Author</small>
                         </div>

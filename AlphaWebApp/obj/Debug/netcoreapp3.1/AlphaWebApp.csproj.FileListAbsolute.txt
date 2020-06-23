@@ -350,3 +350,4 @@
 /Users/johnki/CURSOS/ASPNetCore3MVC/AlphaWebApp/bin/Debug/netcoreapp3.1/zh-Hant/Microsoft.CodeAnalysis.CSharp.resources.dll
 /Users/johnki/CURSOS/ASPNetCore3MVC/AlphaWebApp/obj/Debug/netcoreapp3.1/AlphaWebApp.MvcApplicationPartsAssemblyInfo.cs
 /Users/johnki/CURSOS/ASPNetCore3MVC/AlphaWebApp/obj/Debug/netcoreapp3.1/Razor/Views/Shared/_Layout.cshtml.g.cs
+/Users/johnki/CURSOS/ASPNetCore3MVC/AlphaWebApp/obj/Debug/netcoreapp3.1/Razor/Views/Book/GetBook.cshtml.g.cs
