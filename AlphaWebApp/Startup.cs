@@ -9,6 +9,8 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using System.IO;
 using Microsoft.Extensions.FileProviders;
+using AlphaWebApp.Data;
+using Microsoft.EntityFrameworkCore;
 
 namespace AlphaWebApp
 {
@@ -18,6 +20,11 @@ namespace AlphaWebApp
         // For more information on how to configure your application, visit https://go.microsoft.com/fwlink/?LinkID=398940
         public void ConfigureServices(IServiceCollection services)
         {
+            //definicion de la cadena de conexion a la base de datos
+            services.AddDbContext<TiendaLibrosContext>(
+                options => options.UseMySql("Server=localhost;Database=TiendaLibros;Uid=root;Pwd=root1234;")
+            );
+            
             services.AddControllersWithViews();
 
             //Estas linea es para que las paginas razor se actualicen sin necesidad de compilar la apliacion
