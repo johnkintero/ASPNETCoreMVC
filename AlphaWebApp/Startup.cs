@@ -11,6 +11,7 @@ using System.IO;
 using Microsoft.Extensions.FileProviders;
 using AlphaWebApp.Data;
 using Microsoft.EntityFrameworkCore;
+using AlphaWebApp.Repository;
 
 namespace AlphaWebApp
 {
@@ -32,6 +33,9 @@ namespace AlphaWebApp
             #if DEBUG
             services.AddRazorPages().AddRazorRuntimeCompilation();
             #endif
+
+            //insercion de dependencias para que el controlador pueda ver el repository
+            services.AddScoped<BookRepository, BookRepository>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
