@@ -26,6 +26,7 @@ namespace AlphaWebApp.Controllers
             return View(data);
         }
 
+       [Route("Detalle-Libro/{id}", Name="DetalleLibroRuta")] 
         public ViewResult GetBook(int id)
         {
             //return $"book with id : {id}";
@@ -36,6 +37,17 @@ namespace AlphaWebApp.Controllers
         public List<BookModel> SearchBooks(string bookName, string authorName)
         {
             return _bookRepository.SearchBook(bookName,authorName);
+        }
+
+        public ViewResult AddBook()
+        {
+            return View();
+        } 
+
+        [HttpPost]
+        public ViewResult AddBook(BookModel bookModel)
+        {
+            return View();
         }
     }
 }

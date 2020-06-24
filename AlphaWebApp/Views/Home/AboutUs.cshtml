@@ -1,3 +1,22 @@
-
+@{
+    dynamic data = ViewBag.data;
+    //Ejemplo ViewData pasando datos al layout
+    ViewData["Titulo"] = "About US";
+    //Ejemplo  ViewData casteo de datos
+    var datoViewData = ViewData["Dato"] as BookModel;
+}
 
     <h1>Esta es la pagina de acerca de</h1>
+    @ViewBag.Titulo
+    <br />
+    @data.Id 
+    <br />
+    @data.Name
+    <h1>Informacion con el ViewBag.Type</h1>
+    @ViewBag.Type.Id 
+    @ViewBag.Type.Author
+     <h1>Informacion con el ViewData Casteado</h1>
+    @datoViewData.Id - 
+    @datoViewData.Author
+        
+    

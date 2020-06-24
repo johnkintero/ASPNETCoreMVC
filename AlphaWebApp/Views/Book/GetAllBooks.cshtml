@@ -1,4 +1,6 @@
-@using AlphaWebApp.Models;
+@{
+    ViewData["Titulo"] = "All Books";
+}
 @model IEnumerable<BookModel>
 
 <div class="container">
@@ -14,7 +16,8 @@
                         <p class="card-text">@book.Description</p>
                         <div class="d-flex justify-content-between aling-items-center">
                             <div class="btn-group">
-                                <a href="/book/GetBook/@book.Id" class="btn btn-sm btn-outline-secondary">Ver detalles</a>
+                                @* Para el redireccionamiento se utilizara la ruta definida en el controlador para la accion *@
+                                <a asp-route="DetalleLibroRuta" asp-route-Id= "@book.Id" class="btn btn-sm btn-outline-secondary">Ver detalles</a>
                             </div>
                             <small class="text-muted">Autor : @book.Author</small>
                         </div>

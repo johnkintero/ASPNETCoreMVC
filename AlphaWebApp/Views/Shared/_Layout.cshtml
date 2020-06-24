@@ -2,16 +2,23 @@
 <html>
     <head>
         <meta name="viewport" content="width=device-width" />
-        <title>@ViewBag.Title</title>
-        <link href="~/lib/twitter-bootstrap/css/bootstrap.css" rel="stylesheet" />
+        <title> @ViewData["Titulo"]  |  Tienda de Libros</title>
+        <environment include="Development">
+            <link href="~/lib/twitter-bootstrap/css/bootstrap.css" rel="stylesheet" />
+        </environment>
+        <environment exclude="Development">
+            <link href="~/lib/twitter-bootstrap/css/bootstrap.min.css" rel="stylesheet" />
+        </environment>
         <link href="~/css/Site.css" rel="stylesheet"/>
     </head>
     <body>
         <header>
             <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3">
                 <div class="container">
-                    <a class="navbar-brand" href="/">
-                        <img src="~/images/AlphaWeb.png" width="100px"/>
+                    @* se utilizan los atributos asp- para definir las acciones de los controllers *@
+                    <a class="navbar-brand" asp-controller="Home" asp-action="Index">
+                        @* el helper asp-append-version se coloca en true para que el servidor no cachee la imagen *@
+                        <img src="~/images/AlphaWeb.png" width="100px" asp-append-version="true"/>
                         Tienda de Libros
                     </a>
                     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target=".navbar-collapse" aria-controls="navbarSupportedContent"
@@ -27,16 +34,19 @@
                         </ul>
                         <ul class="navbar-nav flex-grow-1">
                             <li class="nav-item">
-                                <a class="nav-link text-dark" href="/">Incio</a>
+                                <a class="nav-link text-dark" asp-controller="Home" asp-action="Index">Incio</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link text-dark" href="/home/aboutus" >Acerca de</a>
+                                <a class="nav-link text-dark" asp-controller="Home" asp-action="AboutUs" >Acerca de</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link text-dark" href="/home/contactus" >Contacto</a>
+                                <a class="nav-link text-dark" asp-controller="Home" asp-action="ContactUs" >Contacto</a>
                             </li>
-                             <li class="nav-item">
-                                <a class="nav-link text-dark" href="/book/GetAllbooks" >Libros</a>
+                            <li class="nav-item">
+                                <a class="nav-link text-dark" asp-controller="Book" asp-action="GetAllBooks" >Libros</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link text-dark" asp-controller="Book" asp-action="AddBook" >Nuevo Libro</a>
                             </li>
                         </ul>
                     </div>

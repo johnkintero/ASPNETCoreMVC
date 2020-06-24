@@ -351,3 +351,6 @@
 /Users/johnki/CURSOS/ASPNetCore3MVC/AlphaWebApp/obj/Debug/netcoreapp3.1/AlphaWebApp.MvcApplicationPartsAssemblyInfo.cs
 /Users/johnki/CURSOS/ASPNetCore3MVC/AlphaWebApp/obj/Debug/netcoreapp3.1/Razor/Views/Shared/_Layout.cshtml.g.cs
 /Users/johnki/CURSOS/ASPNetCore3MVC/AlphaWebApp/obj/Debug/netcoreapp3.1/Razor/Views/Book/GetBook.cshtml.g.cs
+/Users/johnki/CURSOS/ASPNetCore3MVC/AlphaWebApp/obj/Debug/netcoreapp3.1/Razor/Views/_ViewImports.cshtml.g.cs
+/Users/johnki/CURSOS/ASPNetCore3MVC/AlphaWebApp/obj/Debug/netcoreapp3.1/Razor/Views/_ViewStart.cshtml.g.cs
+/Users/johnki/CURSOS/ASPNetCore3MVC/AlphaWebApp/obj/Debug/netcoreapp3.1/Razor/Views/Book/AddBook.cshtml.g.cs

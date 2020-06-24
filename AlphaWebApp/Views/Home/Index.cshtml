@@ -2,6 +2,13 @@
 <section class="jumbotron text-center">
     <div class="container">
         <h1>Bienvenidos a la Tienda de libros</h1>
+        <environment include="Development">
+            <h1>Development</h1>
+        </environment>
+        <environment exclude="Development">
+            <h1>Produccion</h1>
+        </environment>
+        
         <img src="~/images/AlphaWeb.png" class="img-fluid" />
 
         <p class="lead text-muted">
