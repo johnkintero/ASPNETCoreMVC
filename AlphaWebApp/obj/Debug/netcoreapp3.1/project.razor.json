@@ -1,5 +1,5 @@
 {
-  "FilePath": "/Users/johnki/CURSOS/ASPNetCore3MVC/AlphaWebApp/AlphaWebApp.csproj",
+  "FilePath": "/Users/johnki/CURSOS/ASPNETCoreMVC/AlphaWebApp/AlphaWebApp.csproj",
   "Configuration": {
     "ConfigurationName": "MVC-3.0",
     "LanguageVersion": "3.0",
@@ -20521,53 +20521,53 @@
   "RootNamespace": "AlphaWebApp",
   "Documents": [
     {
-      "FilePath": "/Users/johnki/CURSOS/ASPNetCore3MVC/AlphaWebApp/Views/Home/Index.cshtml",
-      "TargetPath": "Views\\Home\\Index.cshtml",
-      "FileKind": "mvc"
-    },
-    {
-      "FilePath": "/Users/johnki/CURSOS/ASPNetCore3MVC/AlphaWebApp/Views/_ViewImports.cshtml",
-      "TargetPath": "Views\\_ViewImports.cshtml",
-      "FileKind": "mvc"
-    },
-    {
-      "FilePath": "/Users/johnki/CURSOS/ASPNetCore3MVC/AlphaWebApp/Views/Book/AddBook.cshtml",
-      "TargetPath": "Views\\Book\\AddBook.cshtml",
-      "FileKind": "mvc"
-    },
-    {
-      "FilePath": "/Users/johnki/CURSOS/ASPNetCore3MVC/AlphaWebApp/Views/_ViewStart.cshtml",
-      "TargetPath": "Views\\_ViewStart.cshtml",
-      "FileKind": "mvc"
-    },
-    {
-      "FilePath": "/Users/johnki/CURSOS/ASPNetCore3MVC/AlphaWebApp/Views/Home/AboutUs.cshtml",
-      "TargetPath": "Views\\Home\\AboutUs.cshtml",
-      "FileKind": "mvc"
-    },
-    {
-      "FilePath": "/Users/johnki/CURSOS/ASPNetCore3MVC/AlphaWebApp/Views/Shared/ContactUs.cshtml",
-      "TargetPath": "Views\\Shared\\ContactUs.cshtml",
-      "FileKind": "mvc"
-    },
-    {
-      "FilePath": "/Users/johnki/CURSOS/ASPNetCore3MVC/AlphaWebApp/Views/Shared/_Layout.cshtml",
+      "FilePath": "/Users/johnki/CURSOS/ASPNETCoreMVC/AlphaWebApp/Views/Shared/_Layout.cshtml",
       "TargetPath": "Views\\Shared\\_Layout.cshtml",
       "FileKind": "mvc"
     },
     {
-      "FilePath": "/Users/johnki/CURSOS/ASPNetCore3MVC/AlphaWebApp/Views/Book/GetBook.cshtml",
-      "TargetPath": "Views\\Book\\GetBook.cshtml",
+      "FilePath": "/Users/johnki/CURSOS/ASPNETCoreMVC/AlphaWebApp/Views/Book/GetAllBooks.cshtml",
+      "TargetPath": "Views\\Book\\GetAllBooks.cshtml",
       "FileKind": "mvc"
     },
     {
-      "FilePath": "/Users/johnki/CURSOS/ASPNetCore3MVC/AlphaWebApp/TempView/TempView.cshtml",
+      "FilePath": "/Users/johnki/CURSOS/ASPNETCoreMVC/AlphaWebApp/Views/Book/AddBook.cshtml",
+      "TargetPath": "Views\\Book\\AddBook.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "/Users/johnki/CURSOS/ASPNETCoreMVC/AlphaWebApp/TempView/TempView.cshtml",
       "TargetPath": "TempView\\TempView.cshtml",
       "FileKind": "mvc"
     },
     {
-      "FilePath": "/Users/johnki/CURSOS/ASPNetCore3MVC/AlphaWebApp/Views/Book/GetAllBooks.cshtml",
-      "TargetPath": "Views\\Book\\GetAllBooks.cshtml",
+      "FilePath": "/Users/johnki/CURSOS/ASPNETCoreMVC/AlphaWebApp/Views/_ViewStart.cshtml",
+      "TargetPath": "Views\\_ViewStart.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "/Users/johnki/CURSOS/ASPNETCoreMVC/AlphaWebApp/Views/_ViewImports.cshtml",
+      "TargetPath": "Views\\_ViewImports.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "/Users/johnki/CURSOS/ASPNETCoreMVC/AlphaWebApp/Views/Home/Index.cshtml",
+      "TargetPath": "Views\\Home\\Index.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "/Users/johnki/CURSOS/ASPNETCoreMVC/AlphaWebApp/Views/Home/AboutUs.cshtml",
+      "TargetPath": "Views\\Home\\AboutUs.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "/Users/johnki/CURSOS/ASPNETCoreMVC/AlphaWebApp/Views/Shared/ContactUs.cshtml",
+      "TargetPath": "Views\\Shared\\ContactUs.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "/Users/johnki/CURSOS/ASPNETCoreMVC/AlphaWebApp/Views/Book/GetBook.cshtml",
+      "TargetPath": "Views\\Book\\GetBook.cshtml",
       "FileKind": "mvc"
     }
   ],
