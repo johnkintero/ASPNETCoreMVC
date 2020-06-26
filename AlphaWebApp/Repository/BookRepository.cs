@@ -33,11 +33,11 @@ namespace AlphaWebApp.Repository
                 CreatedOn = DateTime.UtcNow,
                 Description = model.Description,
                 Title = model.Title,
-                TotalLines = model.TotalLines,
+                TotalLines = model.TotalLines.HasValue ? model.TotalLines.Value : 0,
                 UpdatedOn = DateTime.UtcNow
             };
 
-            //agrega el libro al contexto
+            //agrega el libro al contextos
             _context.Libros.Add(newBook);
             //Se actualiza en la BD
             _context.SaveChanges();
@@ -60,7 +60,8 @@ namespace AlphaWebApp.Repository
                 CreatedOn = DateTime.UtcNow,
                 Description = model.Description,
                 Title = model.Title,
-                TotalLines = model.TotalLines,
+                Language = model.Language,
+                TotalLines = model.TotalLines.HasValue ? model.TotalLines.Value : 0,
                 UpdatedOn = DateTime.UtcNow
             };
 

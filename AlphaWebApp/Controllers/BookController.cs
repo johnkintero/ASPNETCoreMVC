@@ -20,13 +20,23 @@ namespace AlphaWebApp.Controllers
         //     return _bookRepository.GetAllBooks();
         // }
 
-        //Metodo que retorna la vista de los libros
+        /// <summary>
+        /// Metodo asincronico que retorna el total de libros desde la bd
+        /// </summary>
+        /// <returns></returns>
         public async Task<ViewResult> GetAllBooks()
         {
             var data = await _bookRepository.GetAllBooks();
             return View(data);
         }
 
+        /// <summary>
+        /// Metodo asincronico que retorna la informacion de un libro especifico
+        /// las etiquetas de Route sirven para enmascarar en el browser como se hace la consulta
+        /// en lugar de mostrar GetBook mostrara Detalle_Libro
+        /// </summary>
+        /// <param name="id">Identificador del libro</param>
+        /// <returns></returns>
        [Route("Detalle-Libro/{id}", Name="DetalleLibroRuta")] 
         public async Task<ViewResult> GetBook(int id)
         {
@@ -47,6 +57,11 @@ namespace AlphaWebApp.Controllers
             return View();
         } 
 
+        /// <summary>
+        /// Metodo para agregar un libro nuevo a la bd
+        /// </summary>
+        /// <param name="bookModel">Objeto libro</param>
+        /// <returns></returns>
         [HttpPost]
         public IActionResult AddBook(BookModel bookModel)
         {
@@ -58,15 +73,25 @@ namespace AlphaWebApp.Controllers
             return View();
         }
 
+        /// <summary>
+        /// Metodo asincronico para agregar libros a la DB
+        /// </summary>
+        /// <param name="bookModel">Objeto Libro</param>
+        /// <returns></returns>
         [HttpPost]
         public async Task<IActionResult> AddBookasync(BookModel bookModel)
         {
-            int id =  await _bookRepository.AddBookasync(bookModel);
-            if(id > 0)
+            if (ModelState.IsValid)
             {
-                return RedirectToAction(nameof(AddBook), new {isSuccess = true, bookId= id});
+                int id =  await _bookRepository.AddBookasync(bookModel);
+                if(id > 0)
+                {
+                    return RedirectToAction(nameof(AddBook), new {isSuccess = true, bookId= id});
+                }    
             }
-            return View();
+            //con esta linea se pueden enviar errores personalizados a la vista
+            ModelState.AddModelError("","Este es mi mensaje desde el modelo");
+            return View("AddBook");
         }
     }
 }

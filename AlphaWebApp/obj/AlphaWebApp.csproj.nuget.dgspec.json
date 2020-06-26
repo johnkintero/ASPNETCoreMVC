@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "/Users/johnki/CURSOS/ASPNetCore3MVC/AlphaWebApp/AlphaWebApp.csproj": {}
+    "/Users/johnki/CURSOS/ASPNETCoreMVC/AlphaWebApp/AlphaWebApp.csproj": {}
   },
   "projects": {
-    "/Users/johnki/CURSOS/ASPNetCore3MVC/AlphaWebApp/AlphaWebApp.csproj": {
+    "/Users/johnki/CURSOS/ASPNETCoreMVC/AlphaWebApp/AlphaWebApp.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/Users/johnki/CURSOS/ASPNetCore3MVC/AlphaWebApp/AlphaWebApp.csproj",
+        "projectUniqueName": "/Users/johnki/CURSOS/ASPNETCoreMVC/AlphaWebApp/AlphaWebApp.csproj",
         "projectName": "AlphaWebApp",
-        "projectPath": "/Users/johnki/CURSOS/ASPNetCore3MVC/AlphaWebApp/AlphaWebApp.csproj",
+        "projectPath": "/Users/johnki/CURSOS/ASPNETCoreMVC/AlphaWebApp/AlphaWebApp.csproj",
         "packagesPath": "/Users/johnki/.nuget/packages/",
-        "outputPath": "/Users/johnki/CURSOS/ASPNetCore3MVC/AlphaWebApp/obj/",
+        "outputPath": "/Users/johnki/CURSOS/ASPNETCoreMVC/AlphaWebApp/obj/",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "/Users/johnki/.nuget/NuGet/NuGet.Config"
