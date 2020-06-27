@@ -12,6 +12,9 @@ namespace AlphaWebApp.Data
 
         public DbSet<Libros> Libros {get; set;}
 
+        public DbSet<Idiomas> Idiomas {get; set;}
+
+        //Define la cadena de conexion a la BD desde esta clase, pero tambien se puede hacer en el StartUp.cs
         // protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         // {
         //     optionsBuilder.UseMySql("Server=myServerAddress;Database=myDataBase;Uid=myUsername;Pwd=myPassword;");

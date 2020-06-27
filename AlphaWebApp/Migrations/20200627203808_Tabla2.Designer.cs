@@ -3,14 +3,16 @@ using System;
 using AlphaWebApp.Data;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace AlphaWebApp.Migrations
 {
     [DbContext(typeof(TiendaLibrosContext))]
-    partial class TiendaLibrosContextModelSnapshot : ModelSnapshot
+    [Migration("20200627203808_Tabla2")]
+    partial class Tabla2
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -23,8 +25,8 @@ namespace AlphaWebApp.Migrations
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int");
 
-                    b.Property<string>("Text")
-                        .HasColumnType("longtext CHARACTER SET utf8mb4");
+                    b.Property<int>("Text")
+                        .HasColumnType("int");
 
                     b.HasKey("Id");
 

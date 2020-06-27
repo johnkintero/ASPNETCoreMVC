@@ -3,14 +3,16 @@ using System;
 using AlphaWebApp.Data;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace AlphaWebApp.Migrations
 {
     [DbContext(typeof(TiendaLibrosContext))]
-    partial class TiendaLibrosContextModelSnapshot : ModelSnapshot
+    [Migration("20200627204232_Tablastring")]
+    partial class Tablastring
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder

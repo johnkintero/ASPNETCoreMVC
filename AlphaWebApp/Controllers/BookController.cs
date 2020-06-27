@@ -3,6 +3,7 @@ using AlphaWebApp.Repository;
 using System.Collections.Generic;
 using AlphaWebApp.Models;
 using System.Threading.Tasks;
+using Microsoft.AspNetCore.Mvc.Rendering;
 
 namespace AlphaWebApp.Controllers 
 {
@@ -52,9 +53,26 @@ namespace AlphaWebApp.Controllers
 
         public ViewResult AddBook( bool isSuccess = false, int bookId = 0)
         {
+            //Pasar la lista para el ddl forma1
+            var list = new List<string>() {"Español","Ingles", "Frances","Portugues"};
+            ViewBag.ListaLanguge = list;
+
+             //Pasar la lista para el ddl forma 2
+            ViewBag.ListaLanguge = new SelectList(new List<string>() {"Español","Ingles", "Frances","Portugues"});
+
+            //Pasar un valor seleccionado en el ddl
+            // var model = new BookModel()
+            // {
+            //     Language = "Ingles"
+            // };
+
+
             ViewBag.IsSuccess= isSuccess;
             ViewBag.BookId = bookId;
             return View();
+
+            //Pasar datos seleccionados
+            //return View(model);
         } 
 
         /// <summary>
@@ -89,6 +107,7 @@ namespace AlphaWebApp.Controllers
                     return RedirectToAction(nameof(AddBook), new {isSuccess = true, bookId= id});
                 }    
             }
+            ViewBag.ListaLanguge = new SelectList(new List<string>() {"Español","Ingles", "Frances","Portugues"});
             //con esta linea se pueden enviar errores personalizados a la vista
             ModelState.AddModelError("","Este es mi mensaje desde el modelo");
             return View("AddBook");
