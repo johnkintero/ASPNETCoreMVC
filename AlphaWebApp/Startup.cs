@@ -31,11 +31,16 @@ namespace AlphaWebApp
             //Estas linea es para que las paginas razor se actualicen sin necesidad de compilar la apliacion
             //la validacion es solo funcionara si esta en debug 
             #if DEBUG
-            services.AddRazorPages().AddRazorRuntimeCompilation();
+            //se pueden agregar viewOptions para que las validaciones del cliente se activen o no
+            services.AddRazorPages().AddRazorRuntimeCompilation().AddViewOptions(options => 
+            {
+                options.HtmlHelperOptions.ClientValidationEnabled = true;
+            });
             #endif
 
             //insercion de dependencias para que el controlador pueda ver el repository
             services.AddScoped<BookRepository, BookRepository>();
+            services.AddScoped<LanguageRepository, LanguageRepository>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

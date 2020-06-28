@@ -15,6 +15,7 @@ namespace AlphaWebApp.Models
         [Required(ErrorMessage="Ingrese una breve descripcion del libro")]
         public string Description { get; set; }
         public string Category { get; set; }
+        [Required(ErrorMessage="Ingrese el idioma del libro")]
         public string Language { get; set; }
         [Display(Name="Total paginas del libro")]
         [Required(ErrorMessage="Ingrese el total de las lineas")]

@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using AlphaWebApp.Models;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc.Rendering;
+using System.Linq;
 
 namespace AlphaWebApp.Controllers 
 {
@@ -11,9 +12,13 @@ namespace AlphaWebApp.Controllers
     {
         private readonly BookRepository _bookRepository = null;
 
-        public BookController(BookRepository bookRepository)
+        private readonly LanguageRepository _languageRepository =  null;
+
+
+        public BookController(BookRepository bookRepository, LanguageRepository languageRepository)
         {
             _bookRepository = bookRepository;
+            _languageRepository = languageRepository;
         }
         //Metodo que retorna un Json con la lista de todos los libros
         // public List<BookModel> GetAllBooks()
@@ -54,11 +59,21 @@ namespace AlphaWebApp.Controllers
         public ViewResult AddBook( bool isSuccess = false, int bookId = 0)
         {
             //Pasar la lista para el ddl forma1
-            var list = new List<string>() {"Español","Ingles", "Frances","Portugues"};
-            ViewBag.ListaLanguge = list;
+            //var list = new List<string>() {"Español","Ingles", "Frances","Portugues"};
+            //ViewBag.ListaLanguge = list;
 
              //Pasar la lista para el ddl forma 2
-            ViewBag.ListaLanguge = new SelectList(new List<string>() {"Español","Ingles", "Frances","Portugues"});
+            //ViewBag.ListaLanguge = new SelectList(new List<string>() {"Español","Ingles", "Frances","Portugues"});
+
+            //Recupera desde la BD y pasa texto y valor
+            ViewBag.ListaLanguge = new SelectList(_languageRepository.GetAllLanguage(),"Id","Text");
+
+            //Recupera desde la BD y solo pasa el texto
+            ViewBag.ListaLanguge = _languageRepository.GetAllLanguage()
+                                                      .Select(x=> new SelectListItem()
+                                                        {
+                                                            Text =x.Text
+                                                        }).ToList();
 
             //Pasar un valor seleccionado en el ddl
             // var model = new BookModel()
@@ -107,7 +122,16 @@ namespace AlphaWebApp.Controllers
                     return RedirectToAction(nameof(AddBook), new {isSuccess = true, bookId= id});
                 }    
             }
-            ViewBag.ListaLanguge = new SelectList(new List<string>() {"Español","Ingles", "Frances","Portugues"});
+
+            //Rucupera los valores del selectlist
+            //ViewBag.ListaLanguge = new SelectList(new List<string>() {"Español","Ingles", "Frances","Portugues"});
+
+              //Recupera desde la BD y solo pasa el texto
+            ViewBag.ListaLanguge = _languageRepository.GetAllLanguage()
+                                                      .Select(x=> new SelectListItem()
+                                                        {
+                                                            Text =x.Text
+                                                        }).ToList();
             //con esta linea se pueden enviar errores personalizados a la vista
             ModelState.AddModelError("","Este es mi mensaje desde el modelo");
             return View("AddBook");
