@@ -15,14 +15,19 @@
             </button>
         </div>
     }
-    <form method="post" asp-action="AddBookasync">
+    <div class="d-flex justify-content-center">
+        <div class="spinner-grow text-success" role="status" id="MyLoading" style="display:none">
+            <span class="sr-only">Loading...</span>
+        </div>
+    </div>
+    <form method="post" asp-action="AddBookasync" data-ajax="true" data-ajax-complete="SeCompleto" data-ajax-success="IsSuccess" data-ajax-failure="Fallo" data-ajax-loading="#MyLoading" >
         <div asp-validation-summary="All" class="text-danger"></div>
         <div class="form-group">
-            <label asp-for="Language" class="control-label"></label>
-            <select asp-for="Language" class="form-control" asp-items= "ViewBag.ListaLanguge">
+            <label asp-for="IdiomasId" class="control-label"></label>
+            <select asp-for="IdiomasId" class="form-control" asp-items= "ViewBag.ListaLanguge">
                 <option value="">Seleccione..</option>
             </select>
-            <span asp-validation-for="Language" class="text-danger"></span>
+            <span asp-validation-for="IdiomasId" class="text-danger"></span>
         </div>
         <div class="form-group">
             <label asp-for="Title" class="control-label"></label>
@@ -49,3 +54,19 @@
         </div>
     </form>
 </div>
+@section scripts {
+    <script>
+        function SeCompleto(data){
+            alert('Se completo');
+            console.log(data);
+        }
+        function IsSuccess(data){
+            alert('Termino correctamente');
+            console.log(data);
+        }
+        function Fallo(data){
+            alert('Error ');
+            console.log(data);            
+        }
+    </script>
+}

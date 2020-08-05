@@ -9,8 +9,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace AlphaWebApp.Migrations
 {
     [DbContext(typeof(TiendaLibrosContext))]
-    [Migration("20200624193133_2nuevascolumnas")]
-    partial class _2nuevascolumnas
+    [Migration("20200804163011_nueva")]
+    partial class nueva
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -18,6 +18,20 @@ namespace AlphaWebApp.Migrations
             modelBuilder
                 .HasAnnotation("ProductVersion", "3.1.5")
                 .HasAnnotation("Relational:MaxIdentifierLength", 64);
+
+            modelBuilder.Entity("AlphaWebApp.Data.Idiomas", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    b.Property<string>("Text")
+                        .HasColumnType("longtext CHARACTER SET utf8mb4");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("Idiomas");
+                });
 
             modelBuilder.Entity("AlphaWebApp.Data.Libros", b =>
                 {
@@ -37,8 +51,8 @@ namespace AlphaWebApp.Migrations
                     b.Property<string>("Description")
                         .HasColumnType("longtext CHARACTER SET utf8mb4");
 
-                    b.Property<string>("Language")
-                        .HasColumnType("longtext CHARACTER SET utf8mb4");
+                    b.Property<int>("IdiomasId")
+                        .HasColumnType("int");
 
                     b.Property<string>("Title")
                         .HasColumnType("longtext CHARACTER SET utf8mb4");
@@ -51,7 +65,18 @@ namespace AlphaWebApp.Migrations
 
                     b.HasKey("Id");
 
+                    b.HasIndex("IdiomasId");
+
                     b.ToTable("Libros");
+                });
+
+            modelBuilder.Entity("AlphaWebApp.Data.Libros", b =>
+                {
+                    b.HasOne("AlphaWebApp.Data.Idiomas", "Idiomas")
+                        .WithMany("Libros")
+                        .HasForeignKey("IdiomasId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
                 });
 #pragma warning restore 612, 618
         }

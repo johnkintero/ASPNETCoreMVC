@@ -48,13 +48,14 @@ namespace AlphaWebApp.Controllers
         {
             //return $"book with id : {id}";
             var data = await _bookRepository.GetBookById(id); 
+            
             return View(data);
         }
 
-        public List<BookModel> SearchBooks(string bookName, string authorName)
-        {
-            return _bookRepository.SearchBook(bookName,authorName);
-        }
+        // public List<BookModel> SearchBooks(string bookName, string authorName)
+        // {
+        //     return _bookRepository.SearchBook(bookName,authorName);
+        // }
 
         public ViewResult AddBook( bool isSuccess = false, int bookId = 0)
         {
@@ -72,6 +73,7 @@ namespace AlphaWebApp.Controllers
             ViewBag.ListaLanguge = _languageRepository.GetAllLanguage()
                                                       .Select(x=> new SelectListItem()
                                                         {
+                                                            Value = x.Id.ToString(),
                                                             Text =x.Text
                                                         }).ToList();
 
@@ -130,6 +132,7 @@ namespace AlphaWebApp.Controllers
             ViewBag.ListaLanguge = _languageRepository.GetAllLanguage()
                                                       .Select(x=> new SelectListItem()
                                                         {
+                                                            Value = x.Id.ToString(),
                                                             Text =x.Text
                                                         }).ToList();
             //con esta linea se pueden enviar errores personalizados a la vista

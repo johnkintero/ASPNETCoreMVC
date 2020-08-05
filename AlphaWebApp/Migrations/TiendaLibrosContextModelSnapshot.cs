@@ -49,8 +49,8 @@ namespace AlphaWebApp.Migrations
                     b.Property<string>("Description")
                         .HasColumnType("longtext CHARACTER SET utf8mb4");
 
-                    b.Property<string>("Language")
-                        .HasColumnType("longtext CHARACTER SET utf8mb4");
+                    b.Property<int>("IdiomasId")
+                        .HasColumnType("int");
 
                     b.Property<string>("Title")
                         .HasColumnType("longtext CHARACTER SET utf8mb4");
@@ -63,7 +63,18 @@ namespace AlphaWebApp.Migrations
 
                     b.HasKey("Id");
 
+                    b.HasIndex("IdiomasId");
+
                     b.ToTable("Libros");
+                });
+
+            modelBuilder.Entity("AlphaWebApp.Data.Libros", b =>
+                {
+                    b.HasOne("AlphaWebApp.Data.Idiomas", "Idiomas")
+                        .WithMany("Libros")
+                        .HasForeignKey("IdiomasId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
                 });
 #pragma warning restore 612, 618
         }

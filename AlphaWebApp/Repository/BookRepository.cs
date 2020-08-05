@@ -60,7 +60,7 @@ namespace AlphaWebApp.Repository
                 CreatedOn = DateTime.UtcNow,
                 Description = model.Description,
                 Title = model.Title,
-                Language = model.Language,
+                IdiomasId = model.IdiomasId,
                 TotalLines = model.TotalLines.HasValue ? model.TotalLines.Value : 0,
                 UpdatedOn = DateTime.UtcNow
             };
@@ -94,7 +94,7 @@ namespace AlphaWebApp.Repository
                         Category = libro.Category,
                         Description = libro.Description,
                         Id = libro.Id,
-                        Language = libro.Language,
+                        IdiomasId = libro.IdiomasId,
                         Title = libro.Title,
                         TotalLines = libro.TotalLines
                     });
@@ -108,42 +108,43 @@ namespace AlphaWebApp.Repository
             //Recuperando la informcion del repositorio local
             //return DataSource().Where(x => x.Id == id).FirstOrDefault();
 
-            var libro = await _context.Libros.FindAsync(id);
+            var libro = await _context.Libros.Where(libro => libro.Id == id)
+                                             .Select (l => new BookModel() {
+                                                Author = l.Author,
+                                                Category = l.Category,
+                                                Description = l.Description,
+                                                Id = l.Id,
+                                                IdiomasId = l.IdiomasId,
+                                                Title = l.Title,
+                                                TotalLines = l.TotalLines,
+                                                Idioma = l.Idiomas.Text
+                                             }).FirstOrDefaultAsync();
+
             if (libro != null)
             {
-                var libroDetalle = new BookModel()
-                {
-                    Author = libro.Author,
-                    Category = libro.Category,
-                    Description = libro.Description,
-                    Id = libro.Id,
-                    Language = libro.Language,
-                    Title = libro.Title,
-                    TotalLines = libro.TotalLines
-                };
-                return libroDetalle;
+                return libro;
             }
             return null;
         }
 
-        public List<BookModel> SearchBook(string title, string authorName)
-        {
-            return  DataSource().Where(x=> x.Title == title || x.Author==authorName).ToList();
-        }
+        // public List<BookModel> SearchBook(string title, string authorName)
+        // {
+        //     return  DataSource().Where(x=> x.Title == title || x.Author==authorName).ToList();
+        // }
 
-        private List<BookModel> DataSource()
-        {
-            return new List<BookModel>()
-            {
-                new BookModel(){Id=1, Title="MVC", Author="John", Description="Explica el modelo vista controlador", Category="Programacion",Language="Español",TotalLines=300},
-                new BookModel(){Id=2, Title="GIT", Author="John", Description="Aprenda a manejar GIT", Category="Programacion",Language="Ingles",TotalLines=100},
-                new BookModel(){Id=3, Title="NETCORE", Author="Milena",Description="La nueva microsoft de codigo abierto .NetCore", Category="Programacion",Language="Español",TotalLines=140},
-                new BookModel(){Id=4, Title="JAVASCRIPT", Author="Lorena", Description="Secretos de Javascript", Category="Programacion",Language="Ingles",TotalLines=450},
-                new BookModel(){Id=5, Title="PYTHON", Author="Tatiana",Description="Aprenda a domar la serpiente", Category="Programacion",Language="Español",TotalLines=300},
-                new BookModel(){Id=5, Title="DISEÑO", Author="Tatiana",Description="Aprenda a diseñar su Web", Category="Programacion",Language="Ingles",TotalLines=230},
-                new BookModel(){Id=5, Title="MECANICA", Author="Jose",Description="Mecanica para Dummis", Category="Programacion",Language="Español",TotalLines=145},
-            };
-        }
+        // private List<BookModel> DataSource()
+        // {
+        //     return new List<BookModel>()
+        //     {
+        //         new BookModel(){Id=1, Title="MVC", Author="John", Description="Explica el modelo vista controlador", Category="Programacion",Language="Español",TotalLines=300},
+        //         new BookModel(){Id=2, Title="GIT", Author="John", Description="Aprenda a manejar GIT", Category="Programacion",Language="Ingles",TotalLines=100},
+        //         new BookModel(){Id=3, Title="NETCORE", Author="Milena",Description="La nueva microsoft de codigo abierto .NetCore", Category="Programacion",Language="Español",TotalLines=140},
+        //         new BookModel(){Id=4, Title="JAVASCRIPT", Author="Lorena", Description="Secretos de Javascript", Category="Programacion",Language="Ingles",TotalLines=450},
+        //         new BookModel(){Id=5, Title="PYTHON", Author="Tatiana",Description="Aprenda a domar la serpiente", Category="Programacion",Language="Español",TotalLines=300},
+        //         new BookModel(){Id=5, Title="DISEÑO", Author="Tatiana",Description="Aprenda a diseñar su Web", Category="Programacion",Language="Ingles",TotalLines=230},
+        //         new BookModel(){Id=5, Title="MECANICA", Author="Jose",Description="Mecanica para Dummis", Category="Programacion",Language="Español",TotalLines=145},
+        //     };
+        // }
 
     }
 }

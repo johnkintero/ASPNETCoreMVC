@@ -12,11 +12,18 @@ using Microsoft.Extensions.FileProviders;
 using AlphaWebApp.Data;
 using Microsoft.EntityFrameworkCore;
 using AlphaWebApp.Repository;
+using Microsoft.Extensions.Configuration;
+
 
 namespace AlphaWebApp
 {
     public class Startup
     {
+        private IConfiguration Configuration;
+
+        public Startup (IConfiguration _configuration){
+            Configuration = _configuration ;
+        }
         // This method gets called by the runtime. Use this method to add services to the container.
         // For more information on how to configure your application, visit https://go.microsoft.com/fwlink/?LinkID=398940
         public void ConfigureServices(IServiceCollection services)
@@ -25,6 +32,9 @@ namespace AlphaWebApp
             services.AddDbContext<TiendaLibrosContext>(
                 options => options.UseMySql("Server=localhost;Database=TiendaLibros;Uid=root;Pwd=root1234;")
             );
+
+            services.AddDbContext<TiendaLibrosContext>(
+                options => options.UseMySql(Configuration.GetConnectionString("MyConnMySql")));
             
             services.AddControllersWithViews();
 
@@ -34,7 +44,7 @@ namespace AlphaWebApp
             //se pueden agregar viewOptions para que las validaciones del cliente se activen o no
             services.AddRazorPages().AddRazorRuntimeCompilation().AddViewOptions(options => 
             {
-                options.HtmlHelperOptions.ClientValidationEnabled = true;
+                options.HtmlHelperOptions.ClientValidationEnabled = false;
             });
             #endif
 
